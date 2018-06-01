@@ -1,7 +1,12 @@
 # OracleJet-Basic
 CRUD restAPI with Express, MongoDB
 
-Project Notes: Extended Oracle Packaged - JET-CommonModel-CRUD. Added - restServer using express w/ express routes for GET, PUT, DELETE, Repositories restServer / server.js uses mongo, mongoose
+Project Notes: Extended Oracle Packaged - JET-CommonModel-CRUD. 
+
+Added - restServer using express w/ express routes for GET, POST, PUT, DELETE. 
+
+Repositories restServer / server.js uses mongo, mongoose
+
 Made minor corrections, enhancements to the JET Single Page application to interact with express
 
 Links to content that helped with this project.
