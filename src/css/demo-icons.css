@@ -1,0 +1,612 @@
+
+/************* DEMO CSS Styles ONLY **************
+These classes are for demo purposes only. They are not part of the Alta 
+specification and are not to be used as we JET best practices
+**************************************************/
+
+
+
+/* direct override of jquery ui icon */
+
+/******* DEMO ONLY ****** 
+These icons are for demo purposes only. Use these classes as a reference 
+for defining and connecting your own icon style classes in the JET components
+*************************/
+
+.demo-icon-sprite-bg {
+  display: block;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/demo-small-icons_454545_256x240.png); 
+}
+
+.oj-hover .demo-icon-sprite-bg,
+.oj-focus .demo-icon-sprite-bg ,
+.demo-widget-hover .demo-icon-sprite-bg  {
+    background-image: url(images/demo-small-icons_0572ce_256x240.png); 
+}
+
+.ui-state-active .demo-icon-sprite-bg ,
+.demo-widget-active .demo-icon-sprite-bg  {
+    background-image: url(images/demo-small-icons_ffffff_256x240.png); 
+}
+
+.ui-state-highlight .demo-icon-sprite-bg  {
+    background-image: url(images/demo-small-icons_454545_256x240.png); 
+}
+
+.ui-state-error .demo-icon-sprite-bg ,
+.ui-state-error-text .demo-icon-sprite-bg  {
+    background-image: url(images/demo-small-icons_454545_256x240.png); 
+}
+
+.demo-widget-disabled .demo-icon-sprite-bg  {
+    background-image: url(images/demo-small-icons_454545_256x240.png); 
+}
+
+/* 16X16 icons */
+.demo-icon-sprite-bg.demo-icon-analytics { background-position: 0 0; }
+.demo-icon-sprite-bg.demo-icon-briefcase { background-position: -16px 0; }
+.demo-icon-sprite-bg.demo-icon-hammer { background-position: -32px 0; }
+.demo-icon-sprite-bg.demo-icon-calendar { background-position: -48px 0; }
+.demo-icon-sprite-bg.demo-icon-camera { background-position: -64px 0; }
+.demo-icon-sprite-bg.demo-icon-bubble { background-position: -80px 0; }
+.demo-icon-sprite-bg.demo-icon-cloud { background-position: -96px 0; }
+.demo-icon-sprite-bg.demo-icon-bubbles { background-position: -112px 0; }
+.demo-icon-sprite-bg.demo-icon-blocks { background-position: -128px 0; }
+.demo-icon-sprite-bg.demo-icon-notepad { background-position: -144px 0; }
+.demo-icon-sprite-bg.demo-icon-flag { background-position: -160px 0; }
+.demo-icon-sprite-bg.demo-icon-home { background-position: -176px 0; }
+.demo-icon-sprite-bg.demo-icon-lightning { background-position: -192px 0; }
+.demo-icon-sprite-bg.demo-icon-pencil { background-position: -208px 0; }
+.demo-icon-sprite-bg.demo-icon-prev { background-position: 0 -16px; }
+.demo-icon-sprite-bg.demo-icon-next { background-position: -16px -16px; }
+/* global nav icons */
+.demo-icon-sprite-bg.demo-icon-projects { background-position: 0 -32px; }
+.demo-icon-sprite-bg.demo-icon-search { background-position: -16px -32px; }
+.demo-icon-sprite-bg.demo-icon-caret-down { background-position: 0 -48px; }
+/* info tile icons */
+.demo-icon-sprite-bg.demo-icon-caret-resp-rd { background-position: -16px -48px; }
+.demo-icon-sprite-bg.demo-icon-caret-prev-resp { background-position: -16px -64px; }
+.demo-icon-sprite-bg.demo-icon-caret-next-resp { background-position: 0 -64px; }
+/* page icons */
+.demo-icon-sprite-bg.demo-icon-gear {background-position: 0 -16px; }
+.demo-icon-sprite-bg.demo-icon-time {background-position: -16px -16px; }
+.demo-icon-sprite-bg.demo-icon-people {background-position: -32px -16px; }
+
+
+
+.demo-icon-sprite {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  direction: ltr;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.demo-icon-sprite:before {
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.demo-icon-sprite:before {
+  content: url("images/demo-icons_222222_256x240.png"); }
+
+/* positioning */
+.demo-icon-carat-1-ne:before {
+  margin: 0 0 0 -16px; }
+
+.demo-icon-carat-1-e:before {
+  margin: 0 0 0 -32px; }
+
+.demo-icon-carat-1-se:before {
+  margin: 0 0 0 -48px; }
+
+.demo-icon-carat-1-s:before {
+  margin: 0 0 0 -64px; }
+
+.demo-icon-carat-1-sw:before {
+  margin: 0 0 0 -80px; }
+
+.demo-icon-carat-1-w:before {
+  margin: 0 0 0 -96px; }
+
+.demo-icon-carat-1-nw:before {
+  margin: 0 0 0 -112px; }
+
+.demo-icon-carat-2-n-s:before {
+  margin: 0 0 0 -128px; }
+
+.demo-icon-carat-2-e-w:before {
+  margin: 0 0 0 -144px; }
+
+.demo-icon-triangle-1-n:before {
+  margin: -16px 0 0 0; }
+
+.demo-icon-triangle-1-ne:before {
+  margin: -16px 0 0 -16px; }
+
+.demo-icon-triangle-1-e:before {
+  margin: -16px 0 0 -32px; }
+
+.demo-icon-triangle-1-se:before {
+  margin: -16px 0 0 -48px; }
+
+.demo-icon-triangle-1-s:before {
+  margin: -16px 0 0 -64px; }
+
+.demo-icon-triangle-1-sw:before {
+  margin: -16px 0 0 -80px; }
+
+.demo-icon-triangle-1-w:before {
+  margin: -16px 0 0 -96px; }
+
+.demo-icon-triangle-1-nw:before {
+  margin: -16px 0 0 -112px; }
+
+.demo-icon-triangle-2-n-s:before {
+  margin: -16px 0 0 -128px; }
+
+.demo-icon-triangle-2-e-w:before {
+  margin: -16px 0 0 -144px; }
+
+.demo-icon-arrow-1-n:before {
+  margin: -32px 0 0 0; }
+
+.demo-icon-arrow-1-ne:before {
+  margin: -32px 0 0 -16px; }
+
+.demo-icon-arrow-1-e:before {
+  margin: -32px 0 0 -32px; }
+
+.demo-icon-arrow-1-se:before {
+  margin: -32px 0 0 -48px; }
+
+.demo-icon-arrow-1-s:before {
+  margin: -32px 0 0 -64px; }
+
+.demo-icon-arrow-1-sw:before {
+  margin: -32px 0 0 -80px; }
+
+.demo-icon-arrow-1-w:before {
+  margin: -32px 0 0 -96px; }
+
+.demo-icon-arrow-1-nw:before {
+  margin: -32px 0 0 -112px; }
+
+.demo-icon-arrow-2-n-s:before {
+  margin: -32px 0 0 -128px; }
+
+.demo-icon-arrow-2-ne-sw:before {
+  margin: -32px 0 0 -144px; }
+
+.demo-icon-arrow-2-e-w:before {
+  margin: -32px 0 0 -160px; }
+
+.demo-icon-arrow-2-se-nw:before {
+  margin: -32px 0 0 -176px; }
+
+.demo-icon-arrowstop-1-n:before {
+  margin: -32px 0 0 -192px; }
+
+.demo-icon-arrowstop-1-e:before {
+  margin: -32px 0 0 -208px; }
+
+.demo-icon-arrowstop-1-s:before {
+  margin: -32px 0 0 -224px; }
+
+.demo-icon-arrowstop-1-w:before {
+  margin: -32px 0 0 -240px; }
+
+.demo-icon-arrowthick-1-n:before {
+  margin: -48px 0 0 0; }
+
+.demo-icon-arrowthick-1-ne:before {
+  margin: -48px 0 0 -16px; }
+
+.demo-icon-arrowthick-1-e:before {
+  margin: -48px 0 0 -32px; }
+
+.demo-icon-arrowthick-1-se:before {
+  margin: -48px 0 0 -48px; }
+
+.demo-icon-arrowthick-1-s:before {
+  margin: -48px 0 0 -64px; }
+
+.demo-icon-arrowthick-1-sw:before {
+  margin: -48px 0 0 -80px; }
+
+.demo-icon-arrowthick-1-w:before {
+  margin: -48px 0 0 -96px; }
+
+.demo-icon-arrowthick-1-nw:before {
+  margin: -48px 0 0 -112px; }
+
+.demo-icon-arrowthick-2-n-s:before {
+  margin: -48px 0 0 -128px; }
+
+.demo-icon-arrowthick-2-ne-sw:before {
+  margin: -48px 0 0 -144px; }
+
+.demo-icon-arrowthick-2-e-w:before {
+  margin: -48px 0 0 -160px; }
+
+.demo-icon-arrowthick-2-se-nw:before {
+  margin: -48px 0 0 -176px; }
+
+.demo-icon-arrowthickstop-1-n:before {
+  margin: -48px 0 0 -192px; }
+
+.demo-icon-arrowthickstop-1-e:before {
+  margin: -48px 0 0 -208px; }
+
+.demo-icon-arrowthickstop-1-s:before {
+  margin: -48px 0 0 -224px; }
+
+.demo-icon-arrowthickstop-1-w:before {
+  margin: -48px 0 0 -240px; }
+
+.demo-icon-arrowreturnthick-1-w:before {
+  margin: -64px 0 0 0; }
+
+.demo-icon-arrowreturnthick-1-n:before {
+  margin: -64px 0 0 -16px; }
+
+.demo-icon-arrowreturnthick-1-e:before {
+  margin: -64px 0 0 -32px; }
+
+.demo-icon-arrowreturnthick-1-s:before {
+  margin: -64px 0 0 -48px; }
+
+.demo-icon-arrowreturn-1-w:before {
+  margin: -64px 0 0 -64px; }
+
+.demo-icon-arrowreturn-1-n:before {
+  margin: -64px 0 0 -80px; }
+
+.demo-icon-arrowreturn-1-e:before {
+  margin: -64px 0 0 -96px; }
+
+.demo-icon-arrowreturn-1-s:before {
+  margin: -64px 0 0 -112px; }
+
+.demo-icon-arrowrefresh-1-w:before {
+  margin: -64px 0 0 -128px; }
+
+.demo-icon-arrowrefresh-1-n:before {
+  margin: -64px 0 0 -144px; }
+
+.demo-icon-arrowrefresh-1-e:before {
+  margin: -64px 0 0 -160px; }
+
+.demo-icon-arrowrefresh-1-s:before {
+  margin: -64px 0 0 -176px; }
+
+.demo-icon-arrow-4:before {
+  margin: -80px 0 0 0; }
+
+.demo-icon-arrow-4-diag:before {
+  margin: -80px 0 0 -16px; }
+
+.demo-icon-extlink:before {
+  margin: -80px 0 0 -32px; }
+
+.demo-icon-newwin:before {
+  margin: -80px 0 0 -48px; }
+
+.demo-icon-refresh:before {
+  margin: -80px 0 0 -64px; }
+
+.demo-icon-shuffle:before {
+  margin: -80px 0 0 -80px; }
+
+.demo-icon-transfer-e-w:before {
+  margin: -80px 0 0 -96px; }
+
+.demo-icon-transferthick-e-w:before {
+  margin: -80px 0 0 -112px; }
+
+.demo-icon-folder-collapsed:before {
+  margin: -96px 0 0 0; }
+
+.demo-icon-folder-open:before {
+  margin: -96px 0 0 -16px; }
+
+.demo-icon-document:before {
+  margin: -96px 0 0 -32px; }
+
+.demo-icon-document-b:before {
+  margin: -96px 0 0 -48px; }
+
+.demo-icon-note:before {
+  margin: -96px 0 0 -64px; }
+
+.demo-icon-mail-closed:before {
+  margin: -96px 0 0 -80px; }
+
+.demo-icon-mail-open:before {
+  margin: -96px 0 0 -96px; }
+
+.demo-icon-suitcase:before {
+  margin: -96px 0 0 -112px; }
+
+.demo-icon-comment:before {
+  margin: -96px 0 0 -128px; }
+
+.demo-icon-person:before {
+  margin: -96px 0 0 -144px; }
+
+.demo-icon-print:before {
+  margin: -96px 0 0 -160px; }
+
+.demo-icon-trash:before {
+  margin: -96px 0 0 -176px; }
+
+.demo-icon-locked:before {
+  margin: -96px 0 0 -192px; }
+
+.demo-icon-unlocked:before {
+  margin: -96px 0 0 -208px; }
+
+.demo-icon-bookmark:before {
+  margin: -96px 0 0 -224px; }
+
+.demo-icon-tag:before {
+  margin: -96px 0 0 -240px; }
+
+.demo-icon-home:before {
+  margin: -112px 0 0 0; }
+
+.demo-icon-flag:before {
+  margin: -112px 0 0 -16px; }
+
+.demo-icon-calendar:before {
+  margin: -112px 0 0 -32px; }
+
+.demo-icon-cart:before {
+  margin: -112px 0 0 -48px; }
+
+.demo-icon-pencil:before {
+  margin: -112px 0 0 -64px; }
+
+.demo-icon-clock:before {
+  margin: -112px 0 0 -80px; }
+
+.demo-icon-disk:before {
+  margin: -112px 0 0 -96px; }
+
+.demo-icon-calculator:before {
+  margin: -112px 0 0 -112px; }
+
+.demo-icon-zoomin:before {
+  margin: -112px 0 0 -128px; }
+
+.demo-icon-zoomout:before {
+  margin: -112px 0 0 -144px; }
+
+.demo-icon-search:before {
+  margin: -112px 0 0 -160px; }
+
+.demo-icon-wrench:before {
+  margin: -112px 0 0 -176px; }
+
+.demo-icon-gear:before {
+  margin: -112px 0 0 -192px; }
+
+.demo-icon-heart:before {
+  margin: -112px 0 0 -208px; }
+
+.demo-icon-star:before {
+  margin: -112px 0 0 -224px; }
+
+.demo-icon-link:before {
+  margin: -112px 0 0 -240px; }
+
+.demo-icon-cancel:before {
+  margin: -128px 0 0 0; }
+
+.demo-icon-plus:before {
+  margin: -128px 0 0 -16px; }
+
+.demo-icon-plusthick:before {
+  margin: -128px 0 0 -32px; }
+
+.demo-icon-minus:before {
+  margin: -128px 0 0 -48px; }
+
+.demo-icon-minusthick:before {
+  margin: -128px 0 0 -64px; }
+
+.demo-icon-close:before {
+  margin: -128px 0 0 -80px; }
+
+.demo-icon-closethick:before {
+  margin: -128px 0 0 -96px; }
+
+.demo-icon-key:before {
+  margin: -128px 0 0 -112px; }
+
+.demo-icon-lightbulb:before {
+  margin: -128px 0 0 -128px; }
+
+.demo-icon-scissors:before {
+  margin: -128px 0 0 -144px; }
+
+.demo-icon-clipboard:before {
+  margin: -128px 0 0 -160px; }
+
+.demo-icon-copy:before {
+  margin: -128px 0 0 -176px; }
+
+.demo-icon-contact:before {
+  margin: -128px 0 0 -192px; }
+
+.demo-icon-image:before {
+  margin: -128px 0 0 -208px; }
+
+.demo-icon-video:before {
+  margin: -128px 0 0 -224px; }
+
+.demo-icon-script:before {
+  margin: -128px 0 0 -240px; }
+
+.demo-icon-alert:before {
+  margin: -144px 0 0 0; }
+
+.demo-icon-info:before {
+  margin: -144px 0 0 -16px; }
+
+.demo-icon-notice:before {
+  margin: -144px 0 0 -32px; }
+
+.demo-icon-help:before {
+  margin: -144px 0 0 -48px; }
+
+.demo-icon-check:before {
+  margin: -144px 0 0 -64px; }
+
+.demo-icon-bullet:before {
+  margin: -144px 0 0 -80px; }
+
+.demo-icon-radio-on:before {
+  margin: -144px 0 0 -96px; }
+
+.demo-icon-radio-off:before {
+  margin: -144px 0 0 -112px; }
+
+.demo-icon-pin-w:before {
+  margin: -144px 0 0 -128px; }
+
+.demo-icon-pin-s:before {
+  margin: -144px 0 0 -144px; }
+
+.demo-icon-play:before {
+  margin: -160px 0 0 0; }
+
+.demo-icon-pause:before {
+  margin: -160px 0 0 -16px; }
+
+.demo-icon-seek-next:before {
+  margin: -160px 0 0 -32px; }
+
+.demo-icon-seek-prev:before {
+  margin: -160px 0 0 -48px; }
+
+.demo-icon-seek-end:before {
+  margin: -160px 0 0 -64px; }
+
+.demo-icon-seek-start:before {
+  margin: -160px 0 0 -80px; }
+
+.demo-icon-stop:before {
+  margin: -160px 0 0 -96px; }
+
+.demo-icon-eject:before {
+  margin: -160px 0 0 -112px; }
+
+.demo-icon-volume-off:before {
+  margin: -160px 0 0 -128px; }
+
+.demo-icon-volume-on:before {
+  margin: -160px 0 0 -144px; }
+
+.demo-icon-power:before {
+  margin: -176px 0 0 0; }
+
+.demo-icon-signal-diag:before {
+  margin: -176px 0 0 -16px; }
+
+.demo-icon-signal:before {
+  margin: -176px 0 0 -32px; }
+
+.demo-icon-battery-0:before {
+  margin: -176px 0 0 -48px; }
+
+.demo-icon-battery-1:before {
+  margin: -176px 0 0 -64px; }
+
+.demo-icon-battery-2:before {
+  margin: -176px 0 0 -80px; }
+
+.demo-icon-battery-3:before {
+  margin: -176px 0 0 -96px; }
+
+.demo-icon-circle-plus:before {
+  margin: -192px 0 0 0; }
+
+.demo-icon-circle-minus:before {
+  margin: -192px 0 0 -16px; }
+
+.demo-icon-circle-close:before {
+  margin: -192px 0 0 -32px; }
+
+.demo-icon-circle-triangle-e:before {
+  margin: -192px 0 0 -48px; }
+
+.demo-icon-circle-triangle-s:before {
+  margin: -192px 0 0 -64px; }
+
+.demo-icon-circle-triangle-w:before {
+  margin: -192px 0 0 -80px; }
+
+.demo-icon-circle-triangle-n:before {
+  margin: -192px 0 0 -96px; }
+
+.demo-icon-circle-arrow-e:before {
+  margin: -192px 0 0 -112px; }
+
+.demo-icon-circle-arrow-s:before {
+  margin: -192px 0 0 -128px; }
+
+.demo-icon-circle-arrow-w:before {
+  margin: -192px 0 0 -144px; }
+
+.demo-icon-circle-arrow-n:before {
+  margin: -192px 0 0 -160px; }
+
+.demo-icon-circle-zoomin:before {
+  margin: -192px 0 0 -176px; }
+
+.demo-icon-circle-zoomout:before {
+  margin: -192px 0 0 -192px; }
+
+.demo-icon-circle-check:before {
+  margin: -192px 0 0 -208px; }
+
+.demo-icon-circlesmall-plus:before {
+  margin: -208px 0 0 0; }
+
+.demo-icon-circlesmall-minus:before {
+  margin: -208px 0 0 -16px; }
+
+.demo-icon-circlesmall-close:before {
+  margin: -208px 0 0 -32px; }
+
+.demo-icon-squaresmall-plus:before {
+  margin: -208px 0 0 -48px; }
+
+.demo-icon-squaresmall-minus:before {
+  margin: -208px 0 0 -64px; }
+
+.demo-icon-squaresmall-close:before {
+  margin: -208px 0 0 -80px; }
+
+.demo-icon-grip-dotted-vertical:before {
+  margin: -224px 0 0 0; }
+
+.demo-icon-grip-dotted-horizontal:before {
+  margin: -224px 0 0 -16px; }
+
+.demo-icon-grip-solid-vertical:before {
+  margin: -224px 0 0 -32px; }
+
+.demo-icon-grip-solid-horizontal:before {
+  margin: -224px 0 0 -48px; }
+
+.demo-icon-gripsmall-diagonal-se:before {
+  margin: -224px 0 0 -64px; }
+
+.demo-icon-grip-diagonal-se:before {
+  margin: -224px 0 0 -80px; }

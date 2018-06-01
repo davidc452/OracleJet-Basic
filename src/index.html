@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+
+<!--
+ Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+
+
+<!-- ************************ IMPORTANT INFORMATION ************************************
+This file and Quick Start project are provided as an example of how to configure a JET application.
+It contains the Oracle JET framework and a default requireJS configuration file to show how JET can be setup
+in a common application. This project template can be used in conjunction with demo code from the JET website
+to test JET component behvior and interactions.
+
+Any CSS styling with the prefix "demo-" is for demonstration only and is not provided as part of the JET framework.
+
+The Header and Footer sections are provided for demonstration only. They are currently not part of the JET framework.
+Best practice patterns will be provided as part of the JET framework in a future release.
+***************************** IMPORTANT INFORMATION ************************************ -->
+
+<html>
+  <head>
+    <title>Oracle JET Common Model - CRUD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- This is the main css file for the default Alta theme -->
+    <link rel="stylesheet" href="css/libs/oj/v5.0.0/alta/oj-alta-min.css" type="text/css"/>
+
+    <!-- These style classes are for demonstration purposes only. The JET framework DOES NOT include
+    a framework level icon set. You can use this example as a basis for defining your own icons. -->
+    <link rel="stylesheet" href="css/demo-icons.css">
+
+    <!-- This is where you would add any app specific styling -->
+    <link rel="stylesheet" href="css/override.css" type="text/css"/>
+
+    <!-- RequireJS bootstrap file -->
+    <script data-main="js/main" src="js/libs/require/require.js"></script>
+  </head>
+  <body>
+    <div id="globalBody"> <!-- This div helps make sure the footer stays at the bottom of the page -->
+      <!-- branding -->
+      <header>
+        <div id="divBrandBar" class="demo-brand-bar short">
+          <div class="oj-flex oj-flex-items-pad">
+            <div id="divHeaderContainer" class="oj-flex-item oj-sm-12 oj-md-12 demo-container demo-brand-container page-padding">
+              <a id="aBranding" class="demo-branding" href="#">
+                <img class="demo-logo" alt="Oracle" src="css/images/t.gif"/>
+                <span id="spanProductName">JET Common Model (CRUD)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <!-- This is where your main page content will be loaded -->
+    <div class="oj-flex oj-flex-items-pad">
+      <div id="mainContent" class="oj-flex-item oj-sm-12 oj-md-12 demo-page-content-area page-padding" style="display: none;">
+        <div class="page-padding">
+          <div id="deptList" class="oj-flex-item oj-md-9 oj-sm-12">
+            <oj-table id="table" data="[[datasource]]"
+              columns='[{"headerText": "Remove", "id": "column1", "sortable": "disabled"},
+                        {"headerText": "Department Id",
+                         "field": "DepartmentId", "sortable": "enabled"},
+                        {"headerText": "Department Name",
+                         "field": "DepartmentName", "sortable": "enabled"}]'
+              selectionMode='{"row": "none", "column": "none"}'
+              row-renderer='[[oj.KnockoutTemplateUtils.getRenderer("row_tmpl", true)]]'>
+            </oj-table>
+            <br/>
+            (Click on a Department Name to edit it)
+            <br/><br/>
+            <button id="deleteDept_btn" data-bind="enable: somethingChecked, click: deleteDepartment">Remove Department</button>
+            <br/>
+            <oj-dialog id="editDialog" style="display:none" title="Change Department Name" dragAffordance="title-bar" modality="modeless" resize-behavior="none">
+              <div class="oj-form oj-sm-odd-cols-12">
+                <!-- Example of custom dialog header. Setting the class "oj-dialog-header" will tell the dialog to
+                use the contents of that <div> as the header content. Leaving this <div> out will cause the default header
+                to be used, which uses the title attribute as the header content value. -->
+                <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="dialog-title-id">
+                  <div>
+                    <span id="infoIcon" class="oj-message-status-icon oj-message-info-icon" style="float:left; margin-right: 10px"></span>
+                    <span id="dialog-title-id" class="oj-dialog-title">Change Department Name</span>
+                  </div>
+                </div>
+                <div class="oj-dialog-body">
+                  <div class="oj-md-odd-cols-4">
+                    <oj-label class="oj-label oj-label-inline" for="newName">Department Name</oj-label>
+                    <oj-input-text id="newName" value="{{currentDeptName}}"></oj-input-text>
+                  </div>
+                </div>
+                <div class="oj-dialog-footer">
+                  <oj-button id="submitBtn" on-oj-action="[[updateDeptName]]">Change</oj-button>
+                  <oj-button id="resetBtn" on-oj-action="[[cancelDialog]]">Cancel</oj-button>
+                </div>
+              </div>
+            </oj-dialog>
+            <br/>
+            <!-- A simple form is used to add a new department record. -->
+            <div id="addDept" class="oj-flex-item oj-md-3 oj-sm-12 right">
+              <div id="quickUpdate" class="frame">
+                <div id="newDeptForm">
+                  <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-6 oj-md-labels-inline">
+                    <h3>New Department</h3><hr/>
+                    <div class="oj-flex">
+                      <div class="oj-flex-item">
+                        <oj-label for="newDepartId">Department Id</oj-label>
+                      </div>
+                      <div class="oj-flex-item">
+                        <oj-input-number id="newDepartId" value= "555"></oj-input-number>
+                      </div>
+                    </div>
+                    <div class="oj-flex">
+                      <div class="oj-flex-item">
+                        <oj-label for="newDepartName">Department Name</oj-label>
+                      </div>
+                      <div class="oj-flex-item">
+                        <oj-input-text id="newDepartName" maxlength='30' placeholder="enter new name"></oj-input-text>
+                        <oj-button id="saveBtn" on-oj-action="[[addDepartment]]">Add Department</oj-button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- This footer code is an example of defining a list of items using a Knockout foreach binding
+        This method is good for defining a menu that may need to be localized, or have it's items defined dynamically
+    -->
+    <footer class="oj-helper-clearfix">
+      <div class="oj-flex oj-flex-items-pad">
+        <div id="footerContent" class="page-margin">
+          <ul class="footerLinks" data-bind="foreach : footerLinks">
+            <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
+          </ul>
+          <div class="oj-helper-clearfix"></div>
+          <span class="footerText">Copyright &copy; 2014, 2018 Oracle and/or its affiliates. All rights reserved. Oracle JET <span data-bind="text: ojVersion"></span></span>
+        </div>
+      </div>
+    </footer>
+    </div>
+    <script type="text/html" id="row_tmpl">
+      <tr>
+        <td><input type="checkbox" data-bind="attr: {id: DepartmentId}, click: $root.enableDelete"/></td>
+        <td><div id='deptId' data-bind="text: DepartmentId"></div></td>
+        <td><div id="deptName" data-bind="text: DepartmentName, click: function(data, event){$root.showChangeNameDialog(DepartmentId,data,event)}"></div></td>
+      </tr>
+    </script>
+  </body>
+</html>
