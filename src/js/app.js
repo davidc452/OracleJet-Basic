@@ -13,7 +13,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodel', 'MockRESTServer'],
 
             function viewModel() {
                 var self = this;
-                self.serviceURL = 'http://ec2-18-191-84-148.us-east-2.compute.amazonaws.com:3000/departments';
+                self.serviceURL = 'http://ec2-18-191-84-xxx.us-east-2.compute.amazonaws.com:3000/departments';
                 self.Departments = ko.observableArray([]);
                 self.DeptCol = ko.observable();
                 self.datasource = ko.observable();
